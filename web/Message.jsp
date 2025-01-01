@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>弹窗示例</title>
     <link rel="stylesheet" type="text/css" href="./static/css/Message.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/global.css">
 </head>
 <body>
 
