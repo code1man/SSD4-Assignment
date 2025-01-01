@@ -78,7 +78,7 @@ $(document).ready(function () {
         // 按钮逻辑
         document.getElementById('goHomeButton').onclick = function () {
             modal.style.display = 'none';
-            window.location.href = '/'; // 跳转到主页
+            window.location.href = './'; // 跳转到主页
         };
 
         document.getElementById('continueButton').onclick = function () {

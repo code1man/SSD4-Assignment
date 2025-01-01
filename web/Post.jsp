@@ -22,15 +22,15 @@
     <style>
         /* CSS 变量定义，方便主题更改 */
         :root {
-            --primary-color: #e74c3c; /* 主色调改为红色 */
+            --primary-color: lightblue; /* 主色调改为红色 */
             --secondary-color: #ffffff; /* 辅助色改为白色 */
-            --accent-color: #c0392b;
+            --accent-color: rgb(175, 238, 238);
             --background-color: #ffffff; /* 背景改为白色 */
             --text-color: #333;
             --sidebar-width: 250px;
             --transition-speed: 0.3s;
-            --button-hover-color: #c0392b;
-            --button-active-color: #a93226;
+            --button-hover-color: lightblue;
+            --button-active-color: lightblue;
             --preview-bg-color: #fefefe;
             --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --border-radius: 8px;
@@ -162,7 +162,7 @@
             padding: 30px;
             background:
                     linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3)),
-                    linear-gradient(to bottom right, pink, white);
+                    linear-gradient(to bottom right, lightblue, white);
             overflow-y: auto;
             position: relative;
             transition: padding var(--transition-speed);
@@ -184,7 +184,7 @@
             flex-direction: column;
             background:
                     linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3)),
-                    linear-gradient(to bottom right, pink, white);
+                    linear-gradient(to bottom right, cadetblue, white);
 
 
             padding: 20px;
@@ -224,7 +224,7 @@
         textarea:focus {
 
             border-color: var(--primary-color);
-            box-shadow: 0 0 10px rgba(231, 76, 60, 0.9);
+            box-shadow: 0 0 10px rgba(0,255,255, 0.9);
             outline: none;
         }
 
@@ -318,7 +318,7 @@
             border-radius: var(--border-radius);
             background:
                     linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3)),
-                    linear-gradient(to bottom right, pink, white);
+                    linear-gradient(to bottom right, aliceblue, white);
             box-shadow: var(--card-shadow);
             transition: box-shadow var(--transition-speed), transform var(--transition-speed);
         }
@@ -521,9 +521,9 @@
             </li>
         </ul>
         <!-- 底部品牌logo和切换按钮 -->
-        <div class="brand-logo">
-            <img src="image/img02.jpg" alt="xhs.co.ltd">
-        </div>
+<%--        <div class="brand-logo">--%>
+<%--            <img src="image/img02.jpg" alt="xhs.co.ltd">--%>
+<%--        </div>--%>
         <button class="toggle-btn" onclick="toggleSidebar()">
             <i class="fas fa-angle-double-left"></i>
         </button>
