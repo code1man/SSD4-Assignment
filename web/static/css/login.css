@@ -200,3 +200,26 @@ input.error {
     font-size: 18px;
     z-index: 1000;
 }
+
+.login-method {
+    display: none;
+}
+
+.login-method:not(.hidden) {
+    display: block;
+}
+
+.switch-login-method {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.switch-login-method a {
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.switch-login-method a:hover {
+    text-decoration: underline;
+}

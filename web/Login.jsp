@@ -30,8 +30,8 @@
             <p>可用 <span class="green">微信</span> 扫码</p>
         </div>
 
-        <!-- 登录界面右侧 -->
-        <div class="login-right">
+        <!-- 验证码登录 -->
+        <div id="phone-login-container" class="login-right">
             <h2>手机号登录</h2>
             <form>
                 <div class="input-group">
@@ -54,6 +54,37 @@
                 </div>
             </form>
             <div class="switch-btn" id="switch-to-register">注册新用户</div>
+            <div class="switch-login-method">
+                <a href="#" id="switch-to-password">使用密码登录</a>
+            </div>
+        </div>
+        <!-- 密码登录 -->
+        <div id="password-login-container" class="login-method hidden">
+            <h2>密码登录</h2>
+            <form>
+                <div class="input-group">
+                    <label for="username">用户名/手机号：</label>
+                    <input type="text" id="username" placeholder="输入用户名或手机号">
+                </div>
+                <div class="input-group">
+                    <label for="password">密码：</label>
+                    <input type="password" id="password" placeholder="输入密码">
+                </div>
+                <p id="password-error-login" class="error-message" style="display: none; color: red;">
+                    用户名或密码错误</p>
+                <button id="password-login-btn" type="button" class="login-btn">登录</button>
+                <div class="agreement">
+                    <input type="checkbox" id="password-agreement">
+                    <label for="agreement">我已阅读并同意
+                        <a href="#">《用户协议》</a>
+                        <a href="#">《隐私政策》</a>
+                        <a href="#">《儿童/青少年个人信息保护规则》</a>
+                    </label>
+                </div>
+            </form>
+            <div class="switch-login-method">
+                <a href="#" id="switch-to-phone">使用验证码登录</a>
+            </div>
         </div>
     </div>
 

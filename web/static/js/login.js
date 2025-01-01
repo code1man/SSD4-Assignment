@@ -219,3 +219,23 @@ function showCustomAlert(message) {
         alertBox.style.display = 'none'; // 隐藏弹框
     }, 500); // 500 毫秒即 0.5 秒
 }
+
+const phoneLoginContainer = document.getElementById("phone-login-container");
+const passwordLoginContainer = document.getElementById("password-login-container");
+
+const switchToPassword = document.getElementById("switch-to-password");
+const switchToPhone = document.getElementById("switch-to-phone");
+
+// 切换到密码登录
+switchToPassword.addEventListener("click", function (e) {
+    e.preventDefault();
+    phoneLoginContainer.classList.add("hidden");
+    passwordLoginContainer.classList.remove("hidden");
+});
+
+// 切换到手机号登录
+switchToPhone.addEventListener("click", function (e) {
+    e.preventDefault();
+    passwordLoginContainer.classList.add("hidden");
+    phoneLoginContainer.classList.remove("hidden");
+});
