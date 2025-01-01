@@ -9,8 +9,10 @@
 <html>
 <head>
     <title>盗版小红书</title>
+    <link rel="stylesheet" type="text/css"  href="./static/css/global.css">
 </head>
 <body>
-
+    <a href="Login.jsp">登录</a>
+    <a href="Message.jsp">弹窗</a>
 </body>
 </html>
