@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* 弹窗的整体布局 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* 左侧图片区域 */
+.modal-left {
+    width: 50%;
+    background: url('') no-repeat center center;
+    background-size: cover;
+}
+
+/* 右侧内容区域 */
+.modal-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* 用户信息部分 */
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ddd;
+    position: relative;
+}
+
+.user-avatar:hover .tooltip {
+    display: block;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    z-index: 10;
+}
+
+.user-details {
+    margin-left: 15px;
+    flex-grow: 1;
+}
+
+.user-details h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.follow-button {
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.follow-button:hover {
+    background-color: #e04050;
+}
+
+/* 滚动区域样式 */
+.scrollable {
+    max-height: 400px; /* 限制高度 */
+    overflow-y: auto; /* 滚动 */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* 推文内容样式 */
+.post-content {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* 评论区域样式 */
+.comments {
+    margin-top: 10px;
+}
+
+.comment-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment-content {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.reply-button {
+    font-size: 12px;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.reply-button:hover {
+    text-decoration: underline;
+}
+
+.comment-reply {
+    margin-left: 20px;
+    margin-top: 10px;
+    border-left: 2px solid #eee;
+    padding-left: 10px;
+}
+
+/* 评论输入框样式 */
+.comment-box {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.comment-input {
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.comment-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comment-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

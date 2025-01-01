@@ -1,0 +1,260 @@
+/* index.css */
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+.sidebar {
+    /* top: ; 到时候金鱼的顶端加进来*/
+    width: 250px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #e0e0e0;
+    padding: 10px;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    position: fixed;
+    border-right: 1px solid #007bff;
+
+
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sidebar ul li {
+    height: 50px;
+    line-height: 50px;
+    border-radius: 8px;
+    padding-left: 20px;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.sidebar ul li:hover {
+    background: #eee;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.sidebar ul li a:hover {
+    color: #007bff;
+    transform: scale(1.05);
+}
+
+.sidebar ul li a .icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* 将“更多”固定在底部 */
+
+
+/* 更多菜单样式 */
+/* 确保悬浮窗宽度与左侧栏一致 */
+
+.main-content {
+
+    flex: 1;
+    /* 占据剩余的空间 */
+    overflow-y: auto;
+    margin-left: 270px;
+    margin-top: 22px;
+    margin-right: 25px;
+}
+
+.top {
+
+    background-color: #f8f9fa;
+    border: 1.5px solid #007bff;
+    border-radius: 6px;
+    padding: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+    /* padding-top: 15px;
+    padding-bottom: 15px; */
+    box-sizing: border-box;
+    margin-right: 483px;
+}
+
+.top-nav {
+    display: flex;
+    /* 使用 Flexbox 布局 */
+    list-style: none;
+    /* 移除列表项的默认样式 */
+    padding: 0;
+    /* 移除内边距 */
+    margin: 0;
+    /* 移除外边距 */
+}
+
+.top-nav li {
+    /* 列表项之间的间隙可以通过 margin-right 来设置 */
+    margin-right: 20px;
+    /* 右侧间隙 */
+}
+
+.top-nav li:last-child {
+    /* 移除最后一个列表项的右侧间隙 */
+    margin-right: 0;
+}
+
+.top-nav li a {
+    /* 链接样式 */
+    text-decoration: none;
+    /* 移除下划线 */
+    color: #333;
+    /* 文字颜色 */
+    padding: 8px 16px;
+    /* 内边距，用于增加点击区域 */
+    border-radius: 4px;
+    /* 圆角边框 */
+    transition: background-color 0.3s;
+    /* 背景色过渡效果 */
+}
+
+.top-nav li.active a,
+.top-nav li:hover a {
+    /* 激活或悬停时的链接样式 */
+    background-color: #007bff;
+    /* 蓝色背景 */
+    color: #fff;
+    /* 白色文字 */
+}
+
+
+
+.icon {
+    padding-right: 10px;
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    /* 确保使用的是实心图标 */
+}
+
+/* 为每个菜单项添加具体图标 */
+.icon.fa-discover::before {
+    content: '\f002';
+    /* Font Awesome 的搜索图标 */
+}
+
+.icon.fa-post::before {
+    content: '\f044';
+    /* Font Awesome 的编辑图标 */
+}
+
+.icon.fa-notification::before {
+    content: '\f0f3';
+    /* Font Awesome 的通知铃铛图标 */
+}
+
+.icon.fa-user::before {
+    content: '\f007';
+    /* Font Awesome 的用户图标 */
+}
+
+.icon.fa-ellipsis-v::before {
+    content: '\f142';
+    /* Font Awesome 的三点图标 */
+}
+
+/* 悬浮卡片样式 */
+.hover-card {
+    display: none;
+    /* 默认隐藏 */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    z-index: 100;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 0;
+    text-align: left;
+    /* border: 1.1px solid #007BFF; */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+/* 之前的CSS样式，包括.main-content, .top, .top-nav等，保持不变 */
+
+/* 新增的.content-grid和.content-item样式 */
+.content-grid {
+    display: flex;
+    flex-wrap: wrap;
+    /* 允许项目换行 */
+    justify-content: space-between;
+    /* 项目之间的间隔 */
+    margin-top: 20px;
+    /* 与顶部导航的间距 */
+}
+
+.content-item {
+    flex: 0 0 calc(20% - 20px);
+    /* 每个项目占据20%的宽度，减去间隔 */
+    box-sizing: border-box;
+    background-color: #fff;
+    /* 背景色 */
+    border: 1px solid #007bff;
+    /* 边框 */
+    border-radius: 8px;
+    /* 圆角 */
+    overflow: hidden;
+    /* 隐藏溢出内容 */
+    margin-bottom: 20px;
+    /* 项目之间的垂直间距 */
+    padding: 10px;
+    /* 内边距 */
+    text-align: center;
+    /* 文字居中 */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* 过渡效果 */
+}
+
+.content-item:hover {
+    transform: translateY(-10px);
+    /* 悬停时向上移动 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* 悬停时添加阴影 */
+}
+
+.content-item img {
+    max-width: 100%;
+    /* 图片宽度自适应 */
+    height: auto;
+    /* 图片高度自适应 */
+    border-radius: 8px 8px 0 0;
+    /* 图片圆角，与容器顶部圆角匹配 */
+    cursor: pointer;
+}
+
+.content-item p {
+    margin: 10px 0 0;
+    /* 描述文本的间距 */
+    color: #333;
+    /* 文字颜色 */
+    font-size: 14px;
+    /* 文字大小 */
+}
