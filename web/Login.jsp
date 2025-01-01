@@ -20,7 +20,7 @@
     <div id="login-container" class="login-modal">
         <!-- 登录界面左侧 -->
         <div class="login-left">
-            <h2>登录后推荐更懂你的笔记</h2>
+            <h2>扫码登录</h2>
             <div class="logo">
                 <img src="https://via.placeholder.com/100x50.png?text=%E5%B0%8F%E7%BA%A2%E4%B9%A6" alt="小红书">
             </div>
@@ -61,7 +61,7 @@
     <div id="register-container" class="hidden login-modal">
         <!-- 注册界面左侧 -->
         <div class="login-left">
-            <h2>注册后发现更多精彩内容</h2>
+            <h2>扫码注册</h2>
             <div class="logo">
                 <img src="https://via.placeholder.com/100x50.png?text=%E5%B0%8F%E7%BA%A2%E4%B9%A6" alt="小红书">
             </div>
