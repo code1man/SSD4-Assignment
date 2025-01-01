@@ -59,7 +59,7 @@
             </div>
         </div>
         <!-- 密码登录 -->
-        <div id="password-login-container" class="login-method hidden">
+        <div id="password-login-container" class="login-right hidden">
             <h2>密码登录</h2>
             <form>
                 <div class="input-group">
