@@ -1,0 +1,412 @@
+/* 全局样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 用户信息区域 */
+.user-profile
+{
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.user-id
+{
+    margin-top: 10px;
+    font-size: 12px;
+    /* 字体大小调整为较小 */
+    color: #999;
+    /* 使用浅灰色使其显得低调 */
+    margin: 5px 0;
+    /* 保持上下间距 */
+    line-height: 1.5;
+    /* 增加行高以便更易阅读 */
+}
+
+.smaller
+{
+    font-size: 14px;
+    /* 字体大小调整为较小 */
+    color: #999;
+}
+
+.line{
+    margin-top: 50px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.avatar img {
+    margin-top: 20px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+}
+
+.gender img
+
+{
+    margin-top: 6px;
+    margin-bottom: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+}
+.user-info {
+    margin-left: 20px;
+}
+
+.user-info h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.user-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+#edit-info-btn {
+    margin-top: 20px;
+    padding: 8px 12px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#edit-info-btn:hover {
+    background-color: #e64a19;
+}
+
+/* 标签页样式 */
+.tab-container {
+    padding: 20px;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.tab-btn.active {
+    color: #ff5722;
+    border-bottom: 2px solid #ff5722;
+}
+
+.tab-content {
+    overflow: hidden;
+}
+
+.tab-panel {
+   display: none;
+    animation: slide-in 0.3s ease;
+}
+
+.tab-panel.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 300px;
+    justify-content: flex-start;
+}
+
+/* 动画效果 */
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+/* 模态框背景 */
+.modal {
+    display: none; /* 初始不显示 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #f7f7f7; /* 浅灰色背景 */
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    max-height: 90%;
+}
+
+.modal-header {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    background-color: #fff; /* 每组背景纯白 */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px; /* 组间距 */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* 增加阴影 */
+}
+
+.form-group img.avatar-preview {
+    display: block;
+    margin: 0 auto 10px auto;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.modal-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.modal-footer button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    margin: 0 10px;
+}
+
+.modal-footer button.cancel {
+    background-color: #f44336;
+}
+
+
+
+/*flex布局下设置margin:auto自动完全居中*/
+.temp-note{
+    display: flex;
+    flex-direction: column;
+    /*此时主轴为竖直方向，子轴为水平方向*/
+    width: 100%;
+    align-items: center;
+    margin-top: 50px;
+}
+.temp-collection {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 100%;
+    align-items: center;
+}
+.temp-like{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 100%;
+    align-items: center;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #4CAF50; /* 添加绿色边框 */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* 添加阴影效果 */
+}
+
+
+
+/* 嵌套的标签按钮 */
+.inner-tabs {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.inner-tab-btn {
+    padding: 9px 18px; /* 按钮大小 */
+    background-color: white;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+
+.inner-tab-btn.active {
+    background-color: #e0e0e0; /* 激活时背景色 */
+    color: white; /* 激活时字体颜色 */
+    border-radius: 50%;
+    font-weight: bold; /* 加粗 */
+
+}
+
+
+.inner-tab-panel {
+    display: none;
+}
+
+.inner-tab-panel.active {
+    display: block;
+}
+
+.create-album-btn{
+    position: fixed;
+    bottom: 25px;
+    left: 46%;
+    width: 140px;
+    padding: 8px 12px;
+    background-color:black;
+    border-radius: 30%;
+    color: white;
+    font-size: 20px;
+}
+
+
+
+
+/* 模态框的背景 */
+.album-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* 模态框内容 */
+.album-modal-content {
+    background: white;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 标题和关闭按钮 */
+.album-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.album-modal-header h3 {
+    margin: 0;
+}
+
+.album-close-btn {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* 表单内容 */
+.album-modal-body label {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.album-modal-body input,
+.album-modal-body textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.album-toggle-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+}
+
+.album-toggle-container input[type="checkbox"] {
+    width: auto;
+    margin-top: 20px;
+    margin-left:5px;
+    margin-right: 55px;
+}
+
+/* 按钮样式 */
+.album-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    gap:5px
+}
+
+.album-cancel-btn,
+.album-confirm-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background: #f2f2f2;
+    color: #666;
+}
+
+.confirm-btn {
+    background: #ff4d4f;
+    color: white;
+}
