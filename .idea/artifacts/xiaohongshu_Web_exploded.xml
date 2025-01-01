@@ -7,6 +7,9 @@
         <element id="directory" name="classes">
           <element id="module-output" name="xiaohongshu" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="jsp-api" />
+        </element>
       </element>
     </root>
   </artifact>
