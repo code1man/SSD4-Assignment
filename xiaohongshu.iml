@@ -23,8 +23,9 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jsp-api" level="project" />
     <orderEntry type="library" name="jstl" level="project" />
-    <orderEntry type="library" name="gson-2.10.1" level="project" />
     <orderEntry type="library" name="jsp-api" level="project" />
     <orderEntry type="library" name="jstl-1.2" level="project" />
+    <orderEntry type="library" name="gson-2.10.11" level="project" />
+    <orderEntry type="library" name="jsp-api1" level="project" />
   </component>
 </module>
