@@ -299,7 +299,7 @@ input:focus, select:focus {
 .create-album-btn{
     position: fixed;
     bottom: 25px;
-    left: 46%;
+    left: 50%;
     width: 140px;
     padding: 8px 12px;
     background-color:black;
