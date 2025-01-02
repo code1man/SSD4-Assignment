@@ -5,6 +5,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     color: #333;
+    padding-top: 60px; /* 确保内容不会被覆盖 */
 }
 
 /* 全局链接样式 */
@@ -14,5 +15,5 @@ a {
 }
 
 a:hover {
-    color: #e74c3c;
+    color: blue;
 }

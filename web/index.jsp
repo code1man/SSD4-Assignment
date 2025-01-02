@@ -5,6 +5,7 @@
   Time: 23:19
   To change this template use File | Settings | File Templates.
 --%>
+<%@ include file="WEB-INF/jsp/topBar.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -17,16 +18,16 @@
 
 <div class="sidebar">
     <ul>
-        <li><a href="#"><span class="icon fa-discover"></span> 发现</a></li>
-        <li><a href="#"><span class="icon fa-post"></span> 发布</a></li>
-        <li><a href="#"><span class="icon fa-notification"></span> 通知</a></li>
-        <li><a href="#"><span class="icon fa-user"></span> 我</a></li>
-        <!-- 更多按钮 -->
-        <li><a class="more"><span class="icon fa-ellipsis-v"></span> 更多</a></li>
+        <li><span class="icon fa-eye"></span> 浏览</li>
+        <li><span class="icon fa-discover"></span> 发现好友</li>
+        <li><span class="icon fa-post"></span> 发布</li>
+        <li><span class="icon fa-notification"></span> 通知</li>
+        <li><span class="icon fa-user"></span> 我</li>
+        <li><a class="more"><span class="icon fa-ellipsis-v"></span> 更多</a ></li>
         <div class="hover-card">
             <ul>
-                <li><a href="feedback">反馈与评价该网站</a></li>
-                <li>退出登录</li>
+                <li>反馈与评价该网站</li>
+                <li id="index-login-button">登录</li>
             </ul>
         </div>
     </ul>
@@ -123,6 +124,9 @@
 </div>
 <div class="modal" style="display: none" id="modal">
     <jsp:include page="WEB-INF/jsp/Message.jsp"></jsp:include>
+</div>
+<div id="overlay" class="overlay" style="display: none">
+    <jsp:include page="WEB-INF/jsp/Login.jsp"></jsp:include>
 </div>
 <script src="static/js/index.js"></script>
 </body>

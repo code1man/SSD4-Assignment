@@ -12,11 +12,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登录弹框</title>
-    <link rel="stylesheet" type="text/css" href="./static/css/login.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/Login.css">
     <link rel="stylesheet" type="text/css" href="./static/css/global.css">
 </head>
 <body>
-<div id="overlay" class="overlay">
+
     <div id="login-container" class="login-modal">
         <!-- 登录界面左侧 -->
         <div class="login-left">
@@ -139,9 +139,18 @@
             <div class="switch-btn" id="switch-to-login">返回登录</div>
         </div>
     </div>
-</div>
+
 <!-- 自定义弹框 -->
 <div id="custom-alert">登录成功</div>
+
+<!-- 弹窗 -->
+<div id="confirm-modal" style="display: none;">
+    <div class="modal-content">
+        <p>请先阅读并同意相关协议，是否同意？</p>
+        <button id="confirm-agree">同意</button>
+        <button id="confirm-disagree">不同意</button>
+    </div>
+</div>
 </body>
 <script src="static/js/login.js"></script>
 </html>
