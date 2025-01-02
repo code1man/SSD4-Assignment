@@ -171,3 +171,28 @@ body {
     background-color: #ccc;
     cursor: not-allowed;
 }
+
+#follow-button {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#follow-button:hover {
+    background-color: #f00;
+    color: #fff;
+}
+
+.reply-box {
+    display: flex;
+    margin-top: 10px;
+}
+
+.reply-box input {
+    flex: 1;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.reply-box button {
+    padding: 5px 10px;
+    cursor: pointer;
+}

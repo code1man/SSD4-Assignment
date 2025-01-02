@@ -33,24 +33,134 @@ const users = [
     }
 ];
 
-
 const messages = [
-    { userId: 1, index: 0 }, // 对应奶龙的第1条消息
-    { userId: 2, index: 0 }, // 对应小七的第1条消息
-    { userId: 3, index: 0 }, // 对应暴暴龙的第1条消息
-    { userId: 4, index: 0 }, // 对应小紫兵的第1条消息
-    { userId: 1, index: 1 }, // 对应奶龙的第2条消息
-    { userId: 2, index: 1 }, // 对应小七的第2条消息
-    { userId: 3, index: 1 }, // 对应暴暴龙的第2条消息
-    { userId: 4, index: 1 }, // 对应小紫兵的第2条消息
-    { userId: 1, index: 2 }, // 对应奶龙的第3条消息
-    { userId: 3, index: 2 }, // 对应暴暴龙的第3条消息
-    { userId: 2, index: 2 }, // 对应小七的第3条消息
-    { userId: 4, index: 2 }, // 对应小紫兵的第3条消息
-    { userId: 3, index: 3 }, // 对应暴暴龙的第4条消息
-    { userId: 1, index: 3 }  // 对应奶龙的第4条消息
+    {
+        userId: 1,
+        index: 0,
+        comments: [
+            { userId: 2, content: "奶龙真有意思！" },
+            { userId: 3, content: "奶龙的发言一点都不好笑！" },
+            { userId: 4, content: "奶龙说得对！老大也该学学！" }
+        ]
+    },
+    {
+        userId: 2,
+        index: 0,
+        comments: [
+            { userId: 1, content: "小七别小气，我没吃你的鸡腿！" },
+            { userId: 3, content: "小七，你的鸡腿都进奶龙肚子了！" },
+            { userId: 4, content: "别管奶龙了，鸡腿都不重要！" }
+        ]
+    },
+    {
+        userId: 3,
+        index: 0,
+        comments: [
+            { userId: 1, content: "暴暴龙真会埋怨人！" },
+            { userId: 2, content: "别生气啦，暴暴龙！" },
+            { userId: 4, content: "老大，我们支持你！" }
+        ]
+    },
+    {
+        userId: 4,
+        index: 0,
+        comments: [
+            { userId: 1, content: "小紫兵，你是不是又在拍马屁？" },
+            { userId: 3, content: "小紫兵说得不错，老大最帅！" },
+            { userId: 2, content: "小紫兵，这有点过分了吧。" }
+        ]
+    },
+    {
+        userId: 1,
+        index: 1,
+        comments: [
+            { userId: 3, content: "奶龙就爱炫耀自己！" },
+            { userId: 2, content: "果然还是奶龙最会抢风头！" },
+            { userId: 4, content: "奶龙的发言真的很强！" }
+        ]
+    },
+    {
+        userId: 2,
+        index: 1,
+        comments: [
+            { userId: 1, content: "小七，你别一直盯着我。" },
+            { userId: 3, content: "奶龙已经跑了，你还找什么？" },
+            { userId: 4, content: "小七真可怜，被奶龙抢了鸡腿。" }
+        ]
+    },
+    {
+        userId: 3,
+        index: 1,
+        comments: [
+            { userId: 1, content: "暴暴龙对黄色到底有什么意见？" },
+            { userId: 2, content: "唐龙可能还真是暴暴龙的死对头！" },
+            { userId: 4, content: "老大讨厌的东西我们也不喜欢！" }
+        ]
+    },
+    {
+        userId: 4,
+        index: 1,
+        comments: [
+            { userId: 1, content: "小紫兵的老大滤镜快破了！" },
+            { userId: 2, content: "小紫兵，你的语气真的太搞笑了！" },
+            { userId: 3, content: "谢谢小紫兵的支持，老大最帅！" }
+        ]
+    },
+    {
+        userId: 1,
+        index: 2,
+        comments: [
+            { userId: 3, content: "奶龙天天装深沉，真让人无语！" },
+            { userId: 2, content: "星光和满满的心，奶龙还挺有诗意的。" },
+            { userId: 4, content: "奶龙的心也许没有暴暴龙的大！" }
+        ]
+    },
+    {
+        userId: 3,
+        index: 2,
+        comments: [
+            { userId: 1, content: "暴暴龙的蛋壳有这么厉害吗？" },
+            { userId: 2, content: "你的蛋壳真的值得骄傲吗？" },
+            { userId: 4, content: "老大的蛋壳比谁的都强！" }
+        ]
+    },
+    {
+        userId: 2,
+        index: 2,
+        comments: [
+            { userId: 1, content: "小七，你可能真的太在意奶龙了！" },
+            { userId: 3, content: "榴莲大馒头这个形容词太绝了！" },
+            { userId: 4, content: "小七的文字表达真有意思！" }
+        ]
+    },
+    {
+        userId: 4,
+        index: 2,
+        comments: [
+            { userId: 1, content: "老大的迷人之处在哪里？" },
+            { userId: 2, content: "这马屁拍得有点太明显了吧！" },
+            { userId: 3, content: "小紫兵的支持让我很满意！" }
+        ]
+    },
+    {
+        userId: 3,
+        index: 3,
+        comments: [
+            { userId: 1, content: "暴暴龙，你真是奶龙的宿敌！" },
+            { userId: 2, content: "暴暴龙一直在针对奶龙吧！" },
+            { userId: 4, content: "老大的愤怒也很迷人！" }
+        ]
+    },
+    {
+        userId: 1,
+        index: 3,
+        comments: [
+            { userId: 3, content: "奶龙的“爱”真的值这么多吗？" },
+            { userId: 2, content: "满满的爱让我觉得有点假。" },
+            { userId: 4, content: "奶龙表达得真情实感啊！" }
+        ]
+    }
 ];
-
 
 $(function () {
     const commentList = document.getElementById("commentList");
@@ -58,7 +168,7 @@ $(function () {
     const sendComment = document.getElementById("sendComment");
 
     const currentUser = {
-        name: "当前用户",
+        name: "小蓝叔",
         avatar: "your-avatar-url.jpg",
     };
 
@@ -68,37 +178,35 @@ $(function () {
         sendComment.disabled = false;
     }
 
-    // 发布评论
-    sendComment.addEventListener("click", function () {
-        const content = commentInput.value.trim();
-        if (content === "") {
-            alert("评论内容不能为空！");
-            return;
+    $('#sendComment').on("click",  function () {
+        const message = messages[currentMessageIndex];
+        const inputField = $(".comment-input");
+        const commentContent = inputField.val().trim();
+
+        if (commentContent) {
+            // 保存评论到当前推文的评论数组
+            message.comments.push({
+                user: currentUser.name,
+                content: commentContent
+            });
+
+            // 清空输入框
+            inputField.val("");
+
+            // 更新评论显示
+            updateComments(currentMessageIndex);
+        } else {
+            alert("评论不能为空！");
         }
-
-        // 构建评论元素
-        const commentHTML = `
-      <div class="comment-item">
-        <div class="comment-header">
-          <strong>${currentUser.name}：</strong>
-          <p class="comment-content">${content}</p>
-          <span class="reply-button">回复</span>
-        </div>
-        <div class="comment-reply"></div>
-      </div>
-    `;
-
-        // 插入评论区
-        commentList.insertAdjacentHTML("beforeend", commentHTML);
-
-        // 清空输入框
-        commentInput.value = "";
     });
 
     // 监听评论列表区域的点击事件
     commentList.addEventListener("click", function (e) {
         // 如果点击的是 "回复" 按钮
         if (e.target.classList.contains("reply-button")) {
+            // 添加前，清空其他回复框
+            document.querySelectorAll(".reply-box").forEach(box => box.remove());
+
             const parentComment = e.target.closest(".comment-item");
             const replyContainer = parentComment.querySelector(".comment-reply");
 
@@ -181,20 +289,43 @@ $(function () {
         }
     }
 
-    // 更新推文内容
     function updatePostContent(messageIndex) {
         const message = messages[messageIndex];
         const user = users.find(user => user.userId === message.userId);
-
-        // 根据 message.index 获取用户的推文
         const postContent = user.posts[message.index];
 
-        $("#post-content").text(postContent);
+        $(".post-content").text(postContent);
+
+        // 更新评论区域
+        updateComments(messageIndex);
+    }
+
+    function updateComments(messageIndex) {
+        const message = messages[messageIndex];
+        const commentList = $("#commentList");
+
+        // 清空旧评论
+        commentList.empty();
+
+        // 渲染当前推文的评论
+        message.comments.forEach(comment => {
+            commentList.append(`
+            <div class="comment-item">
+                <div class="comment-header">
+                    <strong>${users[comment.userId - 1].name}：</strong>
+                    <p class="comment-content">${comment.content}</p>
+                    <span class="reply-button">回复</span>
+                </div>
+                <div class="comment-reply"></div>
+            </div>
+        `);
+        });
     }
 
     // 初始化页面
     updateUserInfo(currentMessageIndex);
     updatePostContent(currentMessageIndex);
+    updateComments(currentMessageIndex);
 
     // 滚轮事件
     $(".scrollable").on("wheel", function (e) {
@@ -261,10 +392,8 @@ $(function () {
             let filteredIndex = userMessages.findIndex(msg => msg.index === messages[currentMessageIndex].index);
             $(".scrollable").off("wheel").on("wheel", function (e) {
                 if (e.originalEvent.deltaY > 0) {
-                    // 下一个消息
                     filteredIndex = (filteredIndex + 1) % userMessages.length;
                 } else {
-                    // 上一个消息
                     filteredIndex = (filteredIndex - 1 + userMessages.length) % userMessages.length;
                 }
 

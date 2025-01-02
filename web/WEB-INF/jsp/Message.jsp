@@ -47,7 +47,6 @@
 
             <!-- 评论区域 -->
             <div class="comments" id="commentList">
-                <!-- 示例评论 -->
                 <div class="comment-item">
                     <div class="comment-header">
                         <strong>用户1：</strong>
