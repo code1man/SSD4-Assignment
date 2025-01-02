@@ -6,7 +6,7 @@ modal.addEventListener('click', (event) => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+$(function () {
     const commentList = document.getElementById("commentList");
     const commentInput = document.getElementById("commentInput");
     const sendComment = document.getElementById("sendComment");
@@ -97,4 +97,49 @@ document.addEventListener("DOMContentLoaded", function () {
             replyInput.value = "";
         }
     });
+
+    const users = [
+        {
+            name: "奶龙",
+            fans: "1000万+",
+            bio: "我是奶龙",
+            posts: [
+                "我是奶龙",
+                "我才是奶龙",
+                "今夜星光闪闪",
+                "爱你的心满满"
+            ],
+        },
+        {
+            name: "小七",
+            fans: "1万+",
+            bio: "奶龙又偷吃我的零食",
+            posts:[
+                "奶龙不要吃我的鸡腿",
+                "奶龙去哪里了",
+                "奶龙你是个榴莲大馒头",
+                "奶龙你的头怎么圆圆的"],
+        },
+        {
+            name: "暴暴龙",
+            fans: "3",
+            bio: "我讨厌奶龙",
+            posts:[
+                "可恶的奶龙又坏我的好事",
+                "可恶的奶龙这抹恶心的黄色能不能从世界消失",
+                "我的蛋壳万众瞩目",
+                "黄色，一切黄色和唐龙从我的世界消失!!!!!!!!"],
+        },
+        {
+            name: "小紫兵",
+            fans: "1",
+            bio: "暴暴龙最帅",
+            posts: [
+                "老大最帅",
+                "老大最强",
+                "老大最迷人",
+                "老大是无敌的"
+            ]
+        },
+    ];
 });
