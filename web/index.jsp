@@ -121,6 +121,9 @@
         </div>
     </div>
 </div>
+<div class="modal" style="display: none" id="modal">
+    <jsp:include page="WEB-INF/jsp/Message.jsp"></jsp:include>
+</div>
 <script src="static/js/index.js"></script>
 </body>
 </html>
