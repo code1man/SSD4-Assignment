@@ -42,6 +42,9 @@ $(document).ready(function () {
     $(".content-item").on("click", function () {
         $('#modal').fadeIn();
     });
+    $('#login-button').on('click', function () {
+        $('#login').fadeIn();
+    })
     $(".modal").on("click", function (e) {
         if (e.target === modal) {
             $(this).fadeOut();

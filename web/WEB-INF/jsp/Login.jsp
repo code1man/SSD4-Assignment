@@ -142,6 +142,15 @@
 </div>
 <!-- 自定义弹框 -->
 <div id="custom-alert">登录成功</div>
+
+<!-- 弹窗 -->
+<div id="confirm-modal" style="display: none;">
+    <div class="modal-content">
+        <p>请先阅读并同意相关协议，是否同意？</p>
+        <button id="confirm-agree">同意</button>
+        <button id="confirm-disagree">不同意</button>
+    </div>
+</div>
 </body>
 <script src="static/js/login.js"></script>
 </html>

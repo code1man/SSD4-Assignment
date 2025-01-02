@@ -26,7 +26,7 @@
         <div class="hover-card">
             <ul>
                 <li><a href="feedback">反馈与评价该网站</a></li>
-                <li>退出登录</li>
+                <li id="login-button">登录</li>
             </ul>
         </div>
     </ul>
@@ -123,6 +123,9 @@
 </div>
 <div class="modal" style="display: none" id="modal">
     <jsp:include page="WEB-INF/jsp/Message.jsp"></jsp:include>
+</div>
+<div class="modal" style="display: none" id="login">
+    <jsp:include page="WEB-INF/jsp/Login.jsp"></jsp:include>
 </div>
 <script src="static/js/index.js"></script>
 </body>
