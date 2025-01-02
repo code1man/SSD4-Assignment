@@ -1,21 +1,10 @@
 let correctCode = Math.floor(1000000 + Math.random() * 90000000); // 验证码
 // 模拟已注册号码
 const registeredNumbers = ["1", "2", "3"];
-const overlay = document.getElementById("overlay");
 
-document.addEventListener("DOMContentLoaded", () => {
-    // 模拟显示弹框
-    setTimeout(() => {
-        overlay.style.display = "flex";
-    }, 500);
-
-    // 模拟关闭弹框的逻辑
-    overlay.addEventListener("click", (e) => {
-        if (e.target === overlay) {
-            overlay.style.display = "none";
-        }
-    });
-});
+const inputs = Array.from(document.querySelectorAll("input, button"));
+[inputs[1], inputs[2]] = [inputs[2], inputs[1]];
+[inputs[6], inputs[7]] = [inputs[7], inputs[6]];
 
 // 切换登录和注册界面
 const loginContainer = document.getElementById("login-container");
@@ -30,6 +19,8 @@ const phoneInputRegister = document.getElementById("phone-register");
 const codeInputRegister = document.getElementById("code-register");
 
 const loginButton = document.getElementById("login-btn");
+
+phoneInputLogin.focus();
 
 // 切换到注册界面
 switchToRegister.addEventListener("click", () => {
@@ -74,9 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("keydown", function (e) {
         const activeElement = document.activeElement;
         if (activeElement.tagName === "INPUT" || activeElement.tagName === "BUTTON") {
-            const inputs = Array.from(document.querySelectorAll("input, button"));
-            [inputs[1], inputs[2]] = [inputs[2], inputs[1]];
-            [inputs[6], inputs[7]] = [inputs[7], inputs[6]];
             const currentIndex = inputs.indexOf(activeElement);
 
             if (e.key === "ArrowDown") {
@@ -89,9 +77,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 inputs[prevIndex].focus();
             } else if (e.key === "Enter") {
                 e.preventDefault();
-                if (activeElement.tagName === "BUTTON") {
+                if (activeElement.tagName === "BUTTON" || activeElement.type === "CHECKBOX") {
                     activeElement.click();
-                } else if (currentIndex + 1 < inputs.length) {
+                }  else if (currentIndex + 1 < inputs.length) {
                     inputs[currentIndex + 1].focus();
                 }
             }
@@ -203,11 +191,51 @@ function validatePasswords() {
 passwordInput.addEventListener("blur", validatePasswords);
 passwordAgainInput.addEventListener("blur", validatePasswords);
 
-loginButton.addEventListener("click",()=>{
-    overlay.style.display = "none";
+var judgeIsAgreement = (agreementCheckbox)=>{
+    // 检查复选框是否已勾选
+    if (!agreementCheckbox.checked) {
+        // 弹出确认弹窗
+        const modal = document.getElementById("confirm-modal");
+        modal.style.display = "block";
 
-    showCustomAlert("登录成功");
+        // 同意按钮
+        document.getElementById("confirm-agree").onclick = function () {
+            agreementCheckbox.checked = true; // 自动勾选
+            modal.style.display = "none"; // 关闭弹窗
+        };
+
+        // 不同意按钮
+        document.getElementById("confirm-disagree").onclick = function () {
+            modal.style.display = "none"; // 关闭弹窗
+        };
+    } else{
+        showCustomAlert("登录成功");
+        $('#index-login-button').text("退出登录"); // 修改按钮状态
+        $('#overlay').fadeOut();
+    }
+}
+
+loginButton.addEventListener("click",()=>{
+    const agreementCheckbox = document.getElementById("agreement");
+
+    // 检查复选框是否已勾选
+    judgeIsAgreement(agreementCheckbox);
 });
+
+$('#password-login-btn').on('click', (e) => {
+    const agreementCheckbox = $('#password-agreement');
+
+    // 检查复选框是否已勾选
+    judgeIsAgreement(agreementCheckbox);
+})
+
+registerButton.addEventListener("click", (e) => {
+    const agreementCheckbox = document.getElementById("register-agreement");
+
+    judgeIsAgreement(agreementCheckbox);
+})
+
+
 
 function showCustomAlert(message) {
     const alertBox = document.getElementById('custom-alert');
