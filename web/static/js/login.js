@@ -20,6 +20,8 @@ const codeInputRegister = document.getElementById("code-register");
 
 const loginButton = document.getElementById("login-btn");
 
+phoneInputLogin.focus();
+
 // 切换到注册界面
 switchToRegister.addEventListener("click", () => {
     correctCode = Math.floor(100000 + Math.random() * 90000000); // 验证码重新打乱
