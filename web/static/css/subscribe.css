@@ -1,0 +1,48 @@
+/* 样式修改 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.follow-section {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 每个关注者条目的样式 */
+.follow-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.follow-content {
+    font-size: 18px;
+    color: #333;
+}
+
+.follow-btn {
+    padding: 5px 10px;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.follow-btn:hover {
+    background-color: #2980b9;
+}
+
+/* 已关注的按钮样式 */
+.follow-btn:disabled {
+    background-color: rgb(128, 128, 128); /* 灰色背景 */
+    cursor: not-allowed;  /* 禁用鼠标样式 */
+}
