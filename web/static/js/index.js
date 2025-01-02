@@ -35,4 +35,16 @@ $(document).ready(function () {
         $(this).parent().addClass('active');
         alert($(this).text());
     });
+
+    // 点击外围关闭弹窗
+    const modal = document.querySelector('.modal');
+
+    $(".content-item").on("click", function () {
+        $('#modal').fadeIn();
+    });
+    $(".modal").on("click", function (e) {
+        if (e.target === modal) {
+            $(this).fadeOut();
+        }
+    });
 });

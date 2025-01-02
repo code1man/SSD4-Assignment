@@ -14,7 +14,9 @@
     <link rel="stylesheet" type="text/css" href="static/css/index.css">
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
-<body><div class="sidebar">
+<body>
+
+<div class="sidebar">
     <ul>
         <li><a href="#"><span class="icon fa-discover"></span> 发现</a></li>
         <li><a href="#"><span class="icon fa-post"></span> 发布</a></li>
@@ -24,7 +26,7 @@
         <li><a class="more"><span class="icon fa-ellipsis-v"></span> 更多</a></li>
         <div class="hover-card">
             <ul>
-                <li>反馈与评价该网站</li>
+                <li><a href="feedback">反馈与评价该网站</a></li>
                 <li>退出登录</li>
             </ul>
         </div>
@@ -119,6 +121,9 @@
             <p>描述文本2</p>
         </div>
     </div>
+</div>
+<div class="modal" style="display: none" id="modal">
+    <jsp:include page="WEB-INF/jsp/Message.jsp"></jsp:include>
 </div>
 <script src="static/js/index.js"></script>
 </body>
