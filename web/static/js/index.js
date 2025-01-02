@@ -42,12 +42,20 @@ $(document).ready(function () {
     $(".content-item").on("click", function () {
         $('#modal').fadeIn();
     });
-    $('#login-button').on('click', function () {
-        $('#login').fadeIn();
+    $('#index-login-button').on('click', function () {
+        $('#overlay').fadeIn();
     })
     $(".modal").on("click", function (e) {
         if (e.target === modal) {
             $(this).fadeOut();
+        }
+    });
+
+    const overlay = document.getElementById("overlay");
+    // 模拟关闭弹框的逻辑
+    overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+            $("#overlay").fadeOut();
         }
     });
 });

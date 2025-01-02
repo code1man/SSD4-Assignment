@@ -74,7 +74,7 @@ body {
 }
 
 .follow-button {
-    background-color: #ff4757;
+    background-color: rgb(0, 160, 255);
     color: white;
     border: none;
     border-radius: 4px;
@@ -83,7 +83,7 @@ body {
 }
 
 .follow-button:hover {
-    background-color: #e04050;
+    background-color: rgb(0, 120, 255);
 }
 
 /* 滚动区域样式 */
@@ -98,7 +98,8 @@ body {
 /* 推文内容样式 */
 .post-content {
     margin-bottom: 20px;
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: bold;
     color: #333;
 }
 
@@ -161,38 +162,7 @@ body {
     padding: 8px 16px;
     font-size: 14px;
     color: #fff;
-    background-color: #007bff;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-}
-
-.comment-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-#follow-button {
-    transition: background-color 0.3s, color 0.3s;
-}
-
-#follow-button:hover {
-    background-color: #f00;
-    color: #fff;
-}
-
-.reply-box {
-    display: flex;
-    margin-top: 10px;
-}
-
-.reply-box input {
-    flex: 1;
-    padding: 5px;
-    margin-right: 10px;
-}
-
-.reply-box button {
-    padding: 5px 10px;
     cursor: pointer;
 }

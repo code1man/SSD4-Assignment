@@ -1,25 +1,10 @@
 let correctCode = Math.floor(1000000 + Math.random() * 90000000); // 验证码
 // 模拟已注册号码
 const registeredNumbers = ["1", "2", "3"];
-const overlay = document.getElementById("overlay");
 
 const inputs = Array.from(document.querySelectorAll("input, button"));
 [inputs[1], inputs[2]] = [inputs[2], inputs[1]];
 [inputs[6], inputs[7]] = [inputs[7], inputs[6]];
-
-document.addEventListener("DOMContentLoaded", () => {
-    // 模拟显示弹框
-    setTimeout(() => {
-        overlay.style.display = "flex";
-    }, 500);
-
-    // 模拟关闭弹框的逻辑
-    overlay.addEventListener("click", (e) => {
-        if (e.target === overlay) {
-            overlay.style.display = "none";
-        }
-    });
-});
 
 // 切换登录和注册界面
 const loginContainer = document.getElementById("login-container");
@@ -222,8 +207,9 @@ var judgeIsAgreement = (agreementCheckbox)=>{
             modal.style.display = "none"; // 关闭弹窗
         };
     } else{
-        overlay.style.display = "none";
         showCustomAlert("登录成功");
+        $('#index-login-button').text("退出登录"); // 修改按钮状态
+        $('#overlay').fadeOut();
     }
 }
 

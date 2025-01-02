@@ -167,6 +167,8 @@ $(function () {
     const commentInput = document.getElementById("commentInput");
     const sendComment = document.getElementById("sendComment");
 
+    commentInput.focus();
+
     const currentUser = {
         name: "小蓝叔",
         avatar: "your-avatar-url.jpg",
@@ -189,6 +191,7 @@ $(function () {
                 user: currentUser.name,
                 content: commentContent
             });
+            console.log(message.comments);
 
             // 清空输入框
             inputField.val("");
@@ -309,16 +312,18 @@ $(function () {
 
         // 渲染当前推文的评论
         message.comments.forEach(comment => {
+            console.log(comment)
             commentList.append(`
             <div class="comment-item">
                 <div class="comment-header">
-                    <strong>${users[comment.userId - 1].name}：</strong>
+                    <strong>小蓝叔：</strong>
                     <p class="comment-content">${comment.content}</p>
                     <span class="reply-button">回复</span>
                 </div>
                 <div class="comment-reply"></div>
             </div>
         `);
+            console.log(message[messageIndex])
         });
     }
 
