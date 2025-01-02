@@ -359,12 +359,12 @@ input:focus, select:focus {
     color: #666;
 }
 
-.album-modal-body input,
-.album-modal-body textarea {
+.album-modal-body >input,
+.album-modal-body >textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    margin-right: 5px;
+    margin-right: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 14px;

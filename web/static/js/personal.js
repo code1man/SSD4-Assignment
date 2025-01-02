@@ -45,18 +45,37 @@ $(function() {
         const gender = document.getElementById("gender").value;
         const avatar = document.getElementById("avatar").files[0];
 
-        // if (!username || !bio || !gender) {
-        //     alert("请填写完整信息！");
-        //     return;
-        // }
+        const formData = new FormData();
+        formData.append("username", username);
+        formData.append("bio", bio);
+        formData.append("gender", gender);
+        if (avatar) {
+            formData.append("avatar", avatar);
+        }
 
-        // 这里可以发送AJAX请求将数据提交到后台
-        // 例如:
-        // const formData = new FormData();
-        // formData.append("username", username);
-        // formData.append("bio", bio);
-        // formData.append("gender", gender);
-        // formData.append("avatar", avatar);
+        $.ajax({
+            url: '/editInformation',
+            type: 'POST',
+            processData: false, // 告诉jQuery不要处理发送的数据
+            contentType: false, // 告诉jQuery不要设置请求头
+            data: formData,
+            success: (response) => {
+                console.log(response);
+                $('#show-username').text(response.updateUsername);
+                $('#show-bio').text(response.updateBio);
+                if (response.updateGender === "male") {
+                    $('#show-gender').html('<img src="/static/image/gender1.png" alt="性别"/>');
+                } else {
+                    $('#show-gender').html('<img src="/static/image/gender2.png" alt="性别"/>');
+                }
+                if (response.updateAvatar) {
+                    $('#show-avatar').attr('src', response.updateAvatar); // 更新头像显示
+                }
+            },
+            error: () => {
+                console.log("update error");
+            },
+        });
 
         alert("信息已保存！");
         modal.style.display = "none"; // 关闭模态框
@@ -143,6 +162,48 @@ $(function(){
     });
 
     successBtn.addEventListener("click", () => {
+        const albumsdiv = document.getElementById("albums");
+        const albumName = document.getElementById("album-title").value;
+        const albumDesc = document.getElementById("album-description").value;
+
+        $.ajax({
+            url: '/createAlbum',
+            type: 'POST',
+            data: {
+                albumName: albumName,
+                albumDesc: albumDesc,
+            },
+            success: (response) => {
+                // 'display: flex; justify-content: flex-start; width: 100%; margin-bottom: 20px;'
+                // 更新顶部的专辑数量按钮
+                $('#albums-btn-with-num').text("专辑・" + response.albumNum);
+                $('inner-tab-panel').css(
+                'display','flex',
+                'justify-content','flex-start',
+                    );
+                // 清空 albumsdiv 并添加新的专辑框
+                albumsdiv.innerHTML = `
+      <div class="album-container" style="display: flex; justify-content: flex-start; width: 100%; margin-bottom: 20px;">
+    <div class="album" style="width: 50%; display: flex; flex-direction:column;justify-content: flex-start; padding: 100px; border: 1px solid #ddd; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <div class="album-info" style="flex: 1; padding-left: 5px;padding-top: 5px;">
+            <h3 class="album-title" style="font-size: 18px; color: #333; margin-bottom: 8px;">${albumName}</h3>
+            <p class="album-desc" style="font-size: 14px; color: #666;">${albumDesc}</p>
+        </div>
+        <div class="album-btn" style="display: flex; flex-direction: row; gap: 10px; justify-content: flex-start; align-items: flex-start;">
+            <button class="album-btn-edit" style="padding: 8px 16px; background-color: #007BFF; color: white; border: none; border-radius: 5px; margin-bottom: 10px; cursor: pointer;">查看</button>
+        </div>
+    </div>
+</div>
+    <button class="create-album-btn">+ 创建专辑</button>
+    `;
+            },
+
+            error: () => {
+                console.log("create error");
+            }
+        });
+
+
         modal.style.display = "none";
     });
 
@@ -180,5 +241,6 @@ $(function(){
             }
         });
     });
+
 
 });

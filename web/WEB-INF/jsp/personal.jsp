@@ -6,6 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+    session.setAttribute("albumNum",0);
+%>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -17,15 +21,17 @@
 </head>
 <body>
 <div class="user-profile">
-    <div class="avatar">
-        <img src="/static/image/nailong.gif" alt="用户头像">
+    <div class="avatar" >
+        <img id="show-avatar" src="/static/image/nailong.gif" alt="用户头像">
     </div>
     <div class="user-info">
-        <h2>小红薯6666BEFD</h2>
+        <h2 id="show-username">小红薯6666FBED</h2>
         <p class="user-id">小红书号: 95290258569</p>
 
-        <p style=" font-size: 14px; color: #000; margin-top: 20px;">还没有简介</p>
-        <span class="gender"><img src="/static/image/gender1.png" alt="性别"/></span>
+        <p style=" font-size: 14px; color: #000; margin-top: 20px;" id="show-bio">还没有简介</p>
+        <span class="gender" id="show-gender">
+                <img src="/static/image/gender1.png" alt="性别"/>
+        </span>
         <br/>
         <span class="information">
                 0 <span class ="smaller">关注 </span> &nbsp;
@@ -57,7 +63,7 @@
             <!-- 嵌套的标签按钮 -->
             <div class="inner-tabs">
                 <button class="inner-tab-btn active" data-inner-tab="inner-notes">笔记・0</button>
-                <button class="inner-tab-btn" data-inner-tab="albums">专辑・0</button>
+                <button class="inner-tab-btn" data-inner-tab="albums" id="albums-btn-with-num">专辑・0</button>
             </div>
             <!-- 嵌套的标签内容 -->
             <div class="inner-tab-content">
@@ -144,10 +150,12 @@
         </div>
         <div class="album-modal-body">
             <label for="album-title">标题</label>
-            <input type="text" id="album-title" placeholder="请输入标题">
+            <input type="text" id="album-title" placeholder="请输入标题" onblur="validateInput(this, 'title-error')">
+            <span id="title-error" style="color: red; display: none; font-size: 13px;">标题不能为空</span>
 
             <label for="album-description">简介</label>
-            <textarea id="album-description" placeholder="请输入简介"></textarea>
+            <textarea id="album-description" placeholder="请输入简介" onblur="validateInput(this, 'description-error')"></textarea>
+            <span id="description-error" style="color: red; display: none; font-size: 13px;" >简介不能为空</span>
 
             <div class="album-toggle-container">
                 <label for="public-album">公开专辑</label>
@@ -161,6 +169,20 @@
         </div>
     </div>
 </div>
+
+<script>
+    function validateInput(inputElement, errorElementId) {
+        const errorElement = document.getElementById(errorElementId);
+        const confirmButton = document.querySelector('.album-confirm-btn'); // 使用 querySelector 获取按钮
+        if (inputElement.value.trim() === "") {
+            errorElement.style.display = "inline";
+            confirmButton.disabled = true; // 禁用按钮
+        } else {
+            errorElement.style.display = "none";
+            confirmButton.disabled = false; // 启用按钮
+        }
+    }
+</script>
 
 <script src="/static/js/personal.js"></script>
 </body>
