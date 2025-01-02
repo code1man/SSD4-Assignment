@@ -5,6 +5,7 @@
   Time: 23:19
   To change this template use File | Settings | File Templates.
 --%>
+<%@ include file="WEB-INF/jsp/topBar.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>

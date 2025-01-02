@@ -2,8 +2,8 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
+    padding-top: 60px; /* 确保内容不会被覆盖 */
 }
 
 /* 用户信息区域 */
