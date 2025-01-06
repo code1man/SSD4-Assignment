@@ -323,33 +323,39 @@ $(function () {
 $(function () {
     const $usernameInput = $("#username");
     const $usernameError = $("#username-error");
+    const $modal = $("#editInfoModal");
 
     // 失去焦点时验证用户名是否存在
     $usernameInput.on("blur", function () {
-        console.log("blur");
-        const username = $usernameInput.val().trim();
+        console.log($modal);
+        console.log($modal.css("display"));
 
-        console.log(username);
-        if (username === "") {
-            $usernameError.text("用户名不能为空");
-            $usernameError.css("display", "block");
-            return;
-        }
-        $.ajax({
-            url: '/checkUsername',
-            type: 'POST',
-            data: { username: username },
-            success: function (response) {
-                if (response.error) {
-                    $usernameError.text(response.error);
-                    $usernameError.css("display", "block");
-                } else {
-                    $usernameError.css("display", "none");
-                }
-            },
-            error: () => {
-                console.log("check username error");
+        if($modal&&$modal.css("display") === "none") {
+            console.log("blur");
+            const username = $usernameInput.val().trim();
+
+            console.log(username);
+            if (username === "") {
+                $usernameError.text("用户名不能为空");
+                $usernameError.css("display", "block");
+                return;
             }
-        });
+            $.ajax({
+                url: '/checkUsername',
+                type: 'POST',
+                data: {username: username},
+                success: function (response) {
+                    if (response.error) {
+                        $usernameError.text(response.error);
+                        $usernameError.css("display", "block");
+                    } else {
+                        $usernameError.css("display", "none");
+                    }
+                },
+                error: () => {
+                    console.log("check username error");
+                }
+            });
+        }
     });
 });

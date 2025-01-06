@@ -115,7 +115,7 @@
                 <div class="form-group">
                     <img class="avatar-preview" src="/static/image/nailong.gif" alt="用户头像" id="avatar-preview">
                     <label for="username">用户名</label>
-                    <input type="text" id="username">
+                    <input type="text" id="username" placeholder="小红薯6666FBED">
                     <p id="username-error" style="color: red; display:none; font-size: 13px;">用户名不能为空</p>
                     <label for="avatar">更改头像</label>
                     <input type="file" id="avatar">
