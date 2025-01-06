@@ -11,9 +11,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>弹窗示例</title>
-    <link rel="stylesheet" type="text/css" href="./static/css/Message.css">
-    <link rel="stylesheet" type="text/css" href="./static/css/global.css">
+    <title>小蓝书</title>
+<%--    <link rel="stylesheet" type="text/css" href="/static/css/Message.css">--%>
+<%--    <link rel="stylesheet" type="text/css" href="/static/css/global.css">--%>
 </head>
 <body>
 <div class="modal-content">
@@ -74,8 +74,9 @@
         </div>
     </div>
 </div>
-
-</body>
 <script src="./static/js/Message.js"></script>
+</body>
+
+</html>
 
 

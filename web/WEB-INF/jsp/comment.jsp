@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>评论区</title>
+    <title>小蓝书</title>
     <link rel="stylesheet" href="./static/css/comment.css">
 </head>
 <body>

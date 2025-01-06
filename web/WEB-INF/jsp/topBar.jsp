@@ -6,15 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TopBar</title>
+    <title>小蓝书</title>
     <link rel="stylesheet" href="./static/css/TopBar.css">
     <link rel="stylesheet" href="./static/css/three.css">
 </head>
 <body>
 <div class="TopBar">
     <div class="logo">
-        <a href="index.jsp" class="image-link">
-            <img src="./static/image/logo.jpeg" alt="Example Image" class="rounded-image">
+        <a href="main.jsp" class="image-link">
+            <img src="../../static/image/logo.jpg" alt="Example Image" class="rounded-image">
         </a>
     </div>
     <div class="search-container">

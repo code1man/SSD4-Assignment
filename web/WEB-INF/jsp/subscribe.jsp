@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>关注页面</title>
+    <title>小蓝书</title>
     <link rel="stylesheet" href="./static/css/subscribe.css">
 </head>
 <body>

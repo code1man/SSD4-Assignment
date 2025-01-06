@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
 
     let isHover = false;
 
@@ -37,16 +37,16 @@ $(document).ready(function () {
     });
 
     // 点击外围关闭弹窗
-    const modal = document.querySelector('.modal');
+    const modal1 = document.querySelector('.modal1');
 
     $(".content-item").on("click", function () {
-        $('#modal').fadeIn();
+        $('.modal1').fadeIn();
     });
     $('#index-login-button').on('click', function () {
         $('#overlay').fadeIn();
     })
-    $(".modal").on("click", function (e) {
-        if (e.target === modal) {
+    $(".modal1").on("click", function (e) {
+        if (e.target === modal1) {
             $(this).fadeOut();
         }
     });
