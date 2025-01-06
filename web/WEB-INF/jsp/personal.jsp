@@ -115,7 +115,8 @@
                 <div class="form-group">
                     <img class="avatar-preview" src="/static/image/nailong.gif" alt="用户头像" id="avatar-preview">
                     <label for="username">用户名</label>
-                    <input type="text" id="username" placeholder="小红薯6666BEFD">
+                    <input type="text" id="username">
+                    <p id="username-error" style="color: red; display:none; font-size: 13px;">用户名不能为空</p>
                     <label for="avatar">更改头像</label>
                     <input type="file" id="avatar">
                 </div>
@@ -157,11 +158,11 @@
                 <span class="album-close-btn">&times;</span>
             </div>
             <div class="album-modal-body">
-                <label for="album-title">标题</label>
+                <label for="album-title">标题（必填）</label>
                 <input type="text" id="album-title" placeholder="请输入标题" onblur="validateInput(this, 'title-error')">
                 <span id="title-error" style="color: red; display: none; font-size: 13px;">标题不能为空</span>
 
-                <label for="album-description">简介</label>
+                <label for="album-description">简介（必填）</label>
                 <textarea id="album-description" placeholder="请输入简介" onblur="validateInput(this, 'description-error')"></textarea>
                 <span id="description-error" style="color: red; display: none; font-size: 13px;" >简介不能为空</span>
 

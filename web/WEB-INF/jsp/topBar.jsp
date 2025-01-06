@@ -1,20 +1,12 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>小蓝书</title>
-    <link rel="stylesheet" href="./static/css/TopBar.css">
-    <link rel="stylesheet" href="./static/css/three.css">
-</head>
-<body>
+
+<link rel="stylesheet" href="/static/css/TopBar.css">
+<link rel="stylesheet" href="/static/css/three.css">
 <div class="TopBar">
     <div class="logo">
         <a href="main.jsp" class="image-link">
-            <img src="../../static/image/logo.jpg" alt="Example Image" class="rounded-image">
+            <img src="/static/image/logo.jpg" alt="Example Image" class="rounded-image">
         </a>
     </div>
     <div class="search-container">
@@ -48,6 +40,4 @@
     </div>
 
 </div>
-</body>
-<script src="static/js/topbar.js"></script>
-</html>
+<script src="/static/js/topbar.js"></script>
