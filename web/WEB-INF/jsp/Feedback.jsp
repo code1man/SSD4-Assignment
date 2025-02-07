@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>反馈与评价</title>
+    <title>小蓝书</title>
     <link rel="stylesheet" type="text/css" href="static/css/feedback.css">
     <link rel="stylesheet" type="text/css" href="static/css/global.css">
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>

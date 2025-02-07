@@ -11,9 +11,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>登录弹框</title>
-    <link rel="stylesheet" type="text/css" href="./static/css/Login.css">
-    <link rel="stylesheet" type="text/css" href="./static/css/global.css">
+    <title>小蓝书</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css">
+<%--    <link rel="stylesheet" type="text/css" href="/static/css/global.css">--%>
 </head>
 <body>
 

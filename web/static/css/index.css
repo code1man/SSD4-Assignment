@@ -262,7 +262,7 @@ body {
 }
 
 /* 弹窗的整体布局 */
-.modal {
+.modal1 {
     position: fixed;
     top: 0;
     left: 0;
@@ -285,4 +285,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+div img{
+    z-index:1;
 }

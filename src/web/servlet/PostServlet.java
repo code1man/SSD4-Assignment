@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "LoginServlet", urlPatterns = "/personal")
+@WebServlet(name = "PostServlet", urlPatterns = "/post")
 public class PostServlet extends HttpServlet {
     private static final String POST_PAGE = "/WEB-INF/jsp/Post.jsp";
     @Override

@@ -1,3 +1,4 @@
+//外部标签页选择
 $(function() {
     const tabButtons = document.querySelectorAll(".tab-btn");
     const tabPanels = document.querySelectorAll(".tab-panel");
@@ -17,8 +18,11 @@ $(function() {
         });
     });
 
+});
 
 
+//个人信息模态框设计
+$(function() {
     // 修改用户信息按钮事件
     const editInfoBtn = document.getElementById("edit-info-btn");
     const modal = document.getElementById("editInfoModal");
@@ -26,13 +30,16 @@ $(function() {
     const saveInfoBtn = document.getElementById("save-info-btn");
     const inputs = modal.querySelectorAll("input, select");
 
+    // console.log(inputs);
 
-    editInfoBtn.addEventListener("click", () => {
+    //在捕获阶段进行捕获，并阻止冒泡，防止被关闭函数监听到，我真是个天才
+    editInfoBtn.addEventListener("click", (event) => {
+        event.stopPropagation(); // 阻止事件冒泡
         modal.style.display = "flex"; // 显示模态框
-        if(inputs[0]) {
+        if (inputs[0]) {
             inputs[0].focus(); // 聚焦到第一个输入框
         }
-    });
+    },true);
 
     cancelBtn.addEventListener("click", () => {
         modal.style.display = "none"; // 关闭模态框
@@ -82,15 +89,19 @@ $(function() {
     });
 
 
-
     // 监听每个输入框的键盘事件
     inputs.forEach((input, index) => {
         input.addEventListener('keydown', (event) => {
+            // 太多愚蠢的代码直接用css占全屏了
+            event.stopPropagation(); // 阻止事件冒泡
             if (event.key === 'Enter') { // 如果按下的是回车键
                 event.preventDefault(); // 阻止默认行为（避免表单提交）
                 const nextInput = inputs[index + 1]; // 获取下一个输入框
+                // console.log(nextInput);
                 if (nextInput) {
                     nextInput.focus(); // 聚焦到下一个输入框
+                    console.log("focus next input");
+                    console.log(nextInput);
                 } else {
                     // 如果是最后一个输入框，聚焦到保存按钮
                     const saveButton = document.getElementById('save-info-btn');
@@ -100,11 +111,18 @@ $(function() {
         });
     });
 
+    window.addEventListener("click", (event) => {
+        if (modal && modal.style.display === "flex" && !modal.contains(event.target)) {
+            modal.style.display = "none";
+            console.log(event.target)
+        }
+    },false)
 
+    //在冒泡阶段进行捕获
 });
 
 
-
+// 内部标签页选择
 $(function() {
     const innerTabButtons = document.querySelectorAll(".inner-tab-btn");
     const innerTabPanels = document.querySelectorAll(".inner-tab-panel");
@@ -126,6 +144,7 @@ $(function() {
 });
 
 
+// 创建专辑
 $(function(){
     const successBtn = document.querySelector(".album-confirm-btn");
     const modal = document.getElementById("album-modal");
@@ -243,4 +262,100 @@ $(function(){
     });
 
 
+});
+
+
+// 专辑详情页
+$(function () {
+    const $albumsDiv = $("#albums"); // 获取专辑容器
+
+    // 动态绑定“查看”按钮事件
+    $albumsDiv.on("click", ".album-btn-edit", function () {
+        // 获取当前点击的专辑框内容
+        const $album = $(this).closest(".album");
+        const albumName = $album.find(".album-title").text();
+        const albumDesc = $album.find(".album-desc").text();
+
+        // 创建详细框
+        const $detailView = $(`
+            <div id="detail-view" style="position: fixed; top: 200px; left: 500px;width: 400px; height: 500px; background-color: white; z-index: 1000; padding: 20px; overflow-y: auto; opacity: 0; transition: opacity 0.5s;">
+                <h1 style="font-size: 24px; margin-bottom: 16px;">${albumName}</h1>
+                <p style="font-size: 16px; color: #666; margin-bottom: 24px;">${albumDesc}</p>
+                <div id="detail-content" style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 20px;">
+                    <!-- 动态生成小框 -->
+                </div>
+                <button id="back-button" style="padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">返回</button>
+            </div>
+        `);
+
+        // 动态生成白色背景小框（假设生成10个）
+        const $detailContent = $detailView.find("#detail-content");
+        for (let i = 1; i <= 3; i++) {
+            const $box = $("<div>", {
+                style: "width: 100px; height: 100px; background: #f1f1f1; border-radius: 8px; display: flex; align-items: center; justify-content: center;",
+            });
+            $detailContent.append($box);
+        }
+
+        // 将详细框添加到页面
+        $("body").append($detailView);
+
+        // 动画显示详细框并隐藏专辑框
+        setTimeout(() => {
+            $detailView.css("opacity", 1);
+            $albumsDiv.css("opacity", 0);
+        }, 10);
+
+        // 绑定返回按钮事件
+        $detailView.on("click", "#back-button", function () {
+            // 动画隐藏详细框并显示专辑框
+            $detailView.css("opacity", 0);
+            setTimeout(() => {
+                $detailView.remove();
+                $albumsDiv.css("opacity", 1);
+            }, 500);
+        });
+    });
+});
+
+
+// 用户名处理
+$(function () {
+    const $usernameInput = $("#username");
+    const $usernameError = $("#username-error");
+    const $modal = $("#editInfoModal");
+
+    // 失去焦点时验证用户名是否存在
+    $usernameInput.on("blur", function () {
+        console.log($modal);
+        console.log($modal.css("display"));
+
+        if($modal&&$modal.css("display") === "none") {
+            console.log("blur");
+            const username = $usernameInput.val().trim();
+
+            console.log(username);
+            if (username === "") {
+                $usernameError.text("用户名不能为空");
+                $usernameError.css("display", "block");
+                return;
+            }
+            $.ajax({
+                url: '/checkUsername',
+                type: 'POST',
+                data: {username: username},
+                success: function (response) {
+                    if (response.error) {
+                        $usernameError.text(response.error);
+                        $usernameError.css("display", "block");
+                    } else {
+                        $usernameError.css("display", "none");
+                    }
+                },
+                error: () => {
+                    console.log("check username error");
+                }
+            });
+        }
+    });
 });

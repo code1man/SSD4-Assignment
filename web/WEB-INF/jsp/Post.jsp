@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <link rel="icon" href="image/img01.jpg" type="image/x-icon">
 
-    <title>笔记管理</title>
+    <title>小蓝书</title>
     <!-- 引入 Google 字体 -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- 引入 Font Awesome 图标库 -->
@@ -481,6 +481,7 @@
             padding: 5px;
         }
     </style>
+    <style href="/static/css/global.css"></style>
 </head>
 <body>
 <div class="container">
@@ -490,7 +491,7 @@
         <ul>
             <!-- 新增回到首页选项 -->
             <li>
-                <a href="index.jsp" id="home-link">
+                <a href="/main" id="home-link">
                     <i class="fas fa-home"></i><span> 回到首页</span>
                 </a>
             </li>
